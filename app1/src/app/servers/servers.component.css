@@ -1,0 +1,9 @@
+app-server[online="true"]
+{
+ color: greenyellow;
+}
+
+app-server[online="false"]
+{
+ color: red;
+}
