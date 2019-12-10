@@ -1,2 +1,22 @@
-<h3>User</h3>
-<input type="text" (input)="oninput()" >
+<div class="container">
+    <div class="row">
+        <div class="col-cs-12">   
+                <h3>User</h3>
+
+                <p></p>
+                <button (click)="onDisplayDetails()">Display Details</button>
+  
+                <p *ngIf="toggleDisplayDetails">Secret passwort = tuna</p>
+                <div 
+                    *ngFor="let element of logs"
+                    [ngStyle]="{'background-color':'blue'}"
+                    [ngClass]="{'white-text': logs >=5 }"
+                    >{{ element }}</div>
+                    
+
+
+
+        </div>
+    </div>
+</div>
+

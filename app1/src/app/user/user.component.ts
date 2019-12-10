@@ -7,15 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-
-  userName: "";
+  logs = [ ];
+  toggleDisplayDetails = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  oninput(){
-    console.log("input" );
+  onDisplayDetails(){
+    this.toggleDisplayDetails = !this.toggleDisplayDetails;
+
+    const time = new Date().toUTCString();
+
+    this.logs.push(time + ' Show Message: ' + this.toggleDisplayDetails) ;
   }
 }
