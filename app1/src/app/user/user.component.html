@@ -9,13 +9,9 @@
                 <p *ngIf="toggleDisplayDetails">Secret passwort = tuna</p>
                 <div 
                     *ngFor="let element of logs"
-                    [ngStyle]="{'background-color':'blue'}"
-                    [ngClass]="{'white-text': logs >=5 }"
+                    [ngStyle]="{backgroundColor: logs.length >= 5 ? 'blue' : 'transparent'}"
+                    [ngClass]="{'white-text': logs.length >= 5 }"
                     >{{ element }}</div>
-                    
-
-
-
         </div>
     </div>
 </div>
