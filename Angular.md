@@ -3,7 +3,7 @@
 Creates a new Angular project.
 
 >_ng new project \<projectname>_
-# Start development server
+## Start development server
 Start Angular live devolopment server.
 
 >_ng serve_
@@ -31,7 +31,9 @@ Add "./node_modules/bootstrap/dist/css/bootstrap.min.css" line in .angular-cli.j
 >see example 1.1
 
 # angular 
+
 ## 1 Getting started
+
 ### Setup Development Environment
     1. Get newest NodeJs from nodejs.org 
     2. run _npm install -g npm_
@@ -40,13 +42,55 @@ Add "./node_modules/bootstrap/dist/css/bootstrap.min.css" line in .angular-cli.j
     5. run _npm install -g @angular/cli_
 
 ## 2 Basics
-### ngModel
+
+### Component
+
+### Databinding: ngModel
 
 >_\<input type="text" [(ngModel)]="name">_
 
 It accepts a domain model as an optional Input. If you have a one-way binding to ngModel with [] syntax, changing the value of the domain model in the component class sets the value in the view. If you have a two-way binding with [()] syntax (also known as 'banana-box syntax'), the value in the UI always syncs back to the domain model in your class.
 
-### string interpolation
+### Databinding: string interpolation
+
 One way databinding from model to view
+
 >_{{propertyName}}_
-### Component Selector
+
+### Directive: ngIf
+> _<div *ngIf="condition">Content to render when condition is true.</div>_
+
+### Directive: ngFor
+Example 1
+
+>_<app-server *ngFor="let server of servers"></app-server>_
+
+Example 2
+>\<div
+>>*ngFor="let logItem of log; let i = index"
+
+>>[ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+
+>>[ngClass]="{'white-text': i >= 4}"
+
+>>\>{{ logItem }}
+
+>\</div>
+
+### Directive: ngClass
+>\<p
+>> [ngClass]="{online: serverStatus === 'online'}">
+
+>>  {{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}
+
+>\</p>
+
+
+### Directive: ngStyle
+>\<p
+>>  [ngStyle]="{backgroundColor: getColor()}"
+
+>>  {{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}
+
+>\</p>
+
