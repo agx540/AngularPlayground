@@ -95,3 +95,60 @@ Example 2
 >\</p>
 
 ## 3 Course Project Basics
+
+## 4 Debugging
+
+## 5 Components & Databinding Deep Dive
+
+## 6 Course Project - Components & Databinding
+## 7 Directives Deep Dive
+
+## 8 Course Project - Directives
+
+## 9 Using Services & Dependency Injection
+
+## 10 Course Project - Services & Dependency Injection
+
+## 11 Changing Pages with Routing
+
+## 12 Course Project - Routing
+
+## 13 Understanding Observables
+
+## 14 Course Project Observables
+
+## 15 Handling Forms in Angular Apps
+
+## 16 Course Project - Forms
+
+## 17 Using Pipes to Transform Output
+
+## 18 Making Http Requests
+
+## 19 Course Project - Http
+
+## 20 Authentication & Route Protection in Angular
+
+## 21 Dynamic Components
+
+## 22 Angular Modules & Optimizing Angular Apps
+
+## 23 Deploying an Angular App
+
+## 24 Bonus: Working with ngRx in our Project
+
+## 25 Bonus: Angular Universal
+
+## 26 Angular Animations
+
+## 27 Adding Offline Capabilities with Service Workers
+
+## 28 A Basic Introduction to Unit Testing in Angular Apps
+
+## 29 Angular Changes & New Features
+
+## 30 Course Roundup
+
+## 31 Custom Project & Workflow Setup
+
+## 32 Bonus: TypeScript Introduction (for Angular 2 Usage)
