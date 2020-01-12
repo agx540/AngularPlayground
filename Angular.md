@@ -1,40 +1,57 @@
+
+
 # ng commands
+
 ## Create new angular project
+
 Creates a new Angular project.
 
 >_ng new project \<projectname>_
+
 ## Start development server
+
 Start Angular live devolopment server.
 
 >_ng serve_
-## ng generate component <name>
+
+## ng generate component
+
 Create a full component in src folder
 >_ng generate component \<name>_
+
+oder
 
 >_ng g c \<name>_
 
 # npm commands
-## Install bootstrap 
+
+
+## Install bootstrap
+
 Install newest version of bootstrap
 
 >_npm install --save bootstrap_
 
 ## Fix severity vulnerabilities
+
 Fix severity vulnerabilities in project.
 
 >_npm audit fix_
 
 # manual project changes
+
 ## add bootstrap to new project
+
 Add "./node_modules/bootstrap/dist/css/bootstrap.min.css" line in .angular-cli.json file in app.styles array.
 
 >see example 1.1
 
-# angular 
+# angular
 
 ## 1 Getting started
 
 ### Setup Development Environment
+
     1. Get newest NodeJs from nodejs.org 
     2. run _npm install -g npm_
     3. run _npm uninstall -g angular/cli_
@@ -58,40 +75,35 @@ One way databinding from model to view
 >_{{propertyName}}_
 
 ### Directive: ngIf
-> _<div *ngIf="condition">Content to render when condition is true.</div>_
+
+>_\<div *ngIf="condition">Content to render when condition is true.\</div>_
 
 ### Directive: ngFor
+
 Example 1
 
->_<app-server *ngFor="let server of servers"></app-server>_
+>_\<app-server *ngFor="let server of servers">\</app-server>_
 
 Example 2
 >\<div
 >>*ngFor="let logItem of log; let i = index"
-
 >>[ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
-
 >>[ngClass]="{'white-text': i >= 4}"
-
 >>\>{{ logItem }}
-
 >\</div>
 
 ### Directive: ngClass
+
 >\<p
->> [ngClass]="{online: serverStatus === 'online'}">
-
->>  {{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}
-
+>>[ngClass]="{online: serverStatus === 'online'}">
+>>{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}
 >\</p>
 
-
 ### Directive: ngStyle
+
 >\<p
->>  [ngStyle]="{backgroundColor: getColor()}"
-
->>  {{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}
-
+>>[ngStyle]="{backgroundColor: getColor()}"
+>>{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}
 >\</p>
 
 ## 3 Course Project Basics
@@ -99,24 +111,29 @@ Example 2
 ## 4 Debugging
 
 ### Use Chrome Debugging Tools
+
 Open Chrome debugging tools after by pressing F12.
 
 ### Use SourceMaps
+
 Angular CLI adds SourceMaps to Javascript files when it sets up bundles for the browser to get an reference between JavaScript files and TypeScript files. Only available in development mode. They are not provided in production
 mode.
 
 Access TypeScript files:
-Chrome-> F12 -> Sources -> top -> webpack -> . -> src -> app
+>Chrome-> F12 -> Sources -> top -> webpack -> . -> src -> app
+
 Here you find your TypeScript file like in your dev environment.
 
 ### Use Augury
+
 Augury is a chrome extension to debbug your Angular app. 
 You can see your Router, Components and Models. Helps you 
 understand and analyse your Angular app at runtime.
 
 ## 5 Databinding: Components & Databinding Deep Dive
 
-### Component Lifecycle
+### Component life cycle
+
 | Event                   | Description
 | ------------------------|-------------------------------------------------------------------------------
 | ngOnChanges             | Called after a bound input property changes
@@ -128,16 +145,33 @@ understand and analyse your Angular app at runtime.
 | ngAfterViewChecked      | Called every time the view (and child views) have been checked
 | ngOnDestroy             | Called once the component is about to be destroyed
 
+### @Input
+
+Decorator that marks a class field as an input property and supplies configuration metadata. The input property is bound to a DOM property in the template. During change detection, Angular automatically updates the data property with the DOM property's value.
+
+### @Output()
+
+Decorator that marks a class field as an output property and supplies configuration metadata. The DOM property bound to the output property is automatically updated during change detection.
+
+### EventEmitter\<type>
+
+Use in components with the @Output directive to emit custom events synchronously or asynchronously, and register handlers for those events by subscribing to an instance.
+
+>@Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string}>();
+
+### @ViewChild
+
+Property decorator that configures a view query. The change detector looks for the first element or the directive matching the selector in the view DOM. If the view DOM changes, and a new child matches the selector, the property is updated.
+
+### @ContentChild
+
+Use to get the first element or the directive matching the selector from the content DOM. If the content DOM changes, and a new child matches the selector, the property will be updated.
+
+Content queries are set before the ngAfterContentInit callback is called.
+
+Does not retrieve elements or directives that are in other components' templates, since a component's template is always a black box to its ancestors.
 
 ## 6 Databinding: Course Project - Components & Databinding
-
-
-
-
-
-
-
-
 
 ## 7 Directives Deep Dive
 
