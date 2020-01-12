@@ -98,9 +98,25 @@ Example 2
 
 ## 4 Debugging
 
-## 5 Components & Databinding Deep Dive
+### Use Chrome Debugging Tools
+Open Chrome debugging tools after by pressing F12.
 
-## 6 Course Project - Components & Databinding
+### Use SourceMaps
+Angular CLI adds SourceMaps to Javascript files when it sets up bundles for the browser to get an reference between JavaScript files and TypeScript files. Only available in development mode. They are not provided in production
+mode.
+
+Access TypeScript files:
+Chrome-> F12 -> Sources -> top -> webpack -> . -> src -> app
+Here you find your TypeScript file like in your dev environment.
+
+### Use Augury
+Augury is a chrome extension to debbug your Angular app. 
+You can see your Router, Components and Models. Helps you 
+understand and analyse your Angular app at runtime.
+
+## 5 Databinding: Components & Databinding Deep Dive
+
+## 6 Databinding: Course Project - Components & Databinding
 ## 7 Directives Deep Dive
 
 ## 8 Course Project - Directives
