@@ -86,10 +86,10 @@ Example 1
 
 Example 2
 >\<div
->>*ngFor="let logItem of log; let i = index"
->>[ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
->>[ngClass]="{'white-text': i >= 4}"
->>\>{{ logItem }}
+>>*ngFor="let logItem of log; let i = index"\
+>>[ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"\
+>>[ngClass]="{'white-text': i >= 4}"\>\
+>>{{ logItem }}\
 >\</div>
 
 ### Directive: ngClass
@@ -235,9 +235,26 @@ or
 
 > ng g p \<name of pipe>
 
+### Pure pipe
+
+>@pipe\
+>{  
+>>name: nameOfPipe,\
+>>pure: false; //default value is true  
+>} 
+
+
+When true, the pipe is pure, meaning that the transform() method is invoked only when its input arguments change. Pipes are pure by default.
+
+If the pipe has internal state (that is, the result depends on state other than its arguments), set pure to false. In this case, the pipe is invoked on each change-detection cycle, even if the arguments have not changed.
+
 ### Create your own pipe
 
 see folder "17 - pipes-final"
+
+### async pipe
+
+Use async pipe on promise and oberservables.
 
 ## 18 Making Http Requests
 
