@@ -179,6 +179,10 @@ Does not retrieve elements or directives that are in other components' templates
 
 ## 9 Using Services & Dependency Injection
 
+### @Injectable
+
+Decorator that marks a class as available to be provided and injected as a dependency.
+
 ## 10 Course Project - Services & Dependency Injection
 
 ## 11 Changing Pages with Routing
