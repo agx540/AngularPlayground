@@ -199,6 +199,46 @@ Decorator that marks a class as available to be provided and injected as a depen
 
 ## 17 Using Pipes to Transform Output
 
+### pipe operator like in unix
+
+{{ server.instanceType | uppercase }}
+
+### Chaining pipes
+
+You can add the output from one pipe to the input to another pipe.
+The order is from left to right.
+
+{{ server.started | date:'fullDate' | uppercase }}
+
+### convert a text to uppercase
+
+{{ server.instanceType | uppercase }}
+
+### convert a datetime
+
+{{ server.started | date:'fullDate' | uppercase }}
+
+Sunday, August 8, 1920
+
+If a pipe allows parameters it will be added an seperated by :
+
+### Build in pipes
+
+Build in pipes are documented at angular.io website.
+Under documentation -> API reference and filter for pipes
+
+### Create a new pipe with CLI
+
+> ng generate pipe \<name of pipe>
+
+or
+
+> ng g p \<name of pipe>
+
+### Create your own pipe
+
+see folder "17 - pipes-final"
+
 ## 18 Making Http Requests
 
 ## 19 Course Project - Http
