@@ -258,6 +258,37 @@ Use async pipe on promise and oberservables.
 
 ## 18 Making Http Requests
 
+Call backend by using http calls.
+Used to get data from a server or store data at a server.
+
+### HTTP Verbs
+
+    -POST
+    -GET
+    -PUT
+    -OPTION
+    Always call by the browser before a POST is called.
+    -DELETE
+
+### Create an Firebase backend
+
+    -go to firebase.google.com
+    -login with your google account
+    -go to console at firebase.google.com
+    -add a new firebase project
+    -go to database and create a new realtime database
+    -after creation you see a URL to send HTTP request to the database
+
+### Setup a HTTP request
+
+    -goto app.module.ts
+    -Add HttpClientModule from @angular/common/http
+    -go to your component and inject HttpClient from @angular/common/http
+    -create post 
+
+### Sending a post request to firebase
+
+
 ## 19 Course Project - Http
 
 ## 20 Authentication & Route Protection in Angular
