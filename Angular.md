@@ -76,7 +76,10 @@ One way databinding from model to view
 
 ### Directive: ngIf
 
->_\<div *ngIf="condition">Content to render when condition is true.\</div>_
+>_\<div *ngIf="condition">
+>>Content to render when condition is true.
+>
+>\</div>_
 
 ### Directive: ngFor
 
@@ -86,24 +89,27 @@ Example 1
 
 Example 2
 >\<div
->>*ngFor="let logItem of log; let i = index"\
+>>*ngFor="let logItem of log; let i = index"..\
 >>[ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"\
 >>[ngClass]="{'white-text': i >= 4}"\>\
->>{{ logItem }}\
+>>{{ logItem }}
+>
 >\</div>
 
 ### Directive: ngClass
 
 >\<p
->>[ngClass]="{online: serverStatus === 'online'}">
+>>[ngClass]="{online: serverStatus === 'online'}">\
 >>{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}
+>
 >\</p>
 
 ### Directive: ngStyle
 
 >\<p
->>[ngStyle]="{backgroundColor: getColor()}"
+>>[ngStyle]="{backgroundColor: getColor()}"\
 >>{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}
+>
 >\</p>
 
 ## 3 Course Project Basics
@@ -120,7 +126,7 @@ Angular CLI adds SourceMaps to Javascript files when it sets up bundles for the 
 mode.
 
 Access TypeScript files:
->Chrome-> F12 -> Sources -> top -> webpack -> . -> src -> app
+> Chrome-> F12 -> Sources -> top -> webpack -> . -> src -> app
 
 Here you find your TypeScript file like in your dev environment.
 
@@ -191,6 +197,8 @@ Decorator that marks a class as available to be provided and injected as a depen
 
 ## 13 Understanding Observables
 
+***Always unsubscribe a subscription!***
+
 ## 14 Course Project Observables
 
 ## 15 Handling Forms in Angular Apps
@@ -199,7 +207,11 @@ Decorator that marks a class as available to be provided and injected as a depen
 
 ## 17 Using Pipes to Transform Output
 
-### pipe operator like in unix
+A pipe takes in data as input and transforms it to a desired output.
+
+see <https://angular.io/guide/pipes>
+
+### Pipe operator like in unix
 
 {{ server.instanceType | uppercase }}
 
@@ -210,11 +222,11 @@ The order is from left to right.
 
 {{ server.started | date:'fullDate' | uppercase }}
 
-### convert a text to uppercase
+### Convert a text to uppercase
 
 {{ server.instanceType | uppercase }}
 
-### convert a datetime
+### Convert a datetime
 
 {{ server.started | date:'fullDate' | uppercase }}
 
@@ -241,8 +253,8 @@ or
 >{  
 >>name: nameOfPipe,\
 >>pure: false; //default value is true  
->} 
-
+>
+>}
 
 When true, the pipe is pure, meaning that the transform() method is invoked only when its input arguments change. Pipes are pure by default.
 
@@ -284,9 +296,66 @@ Used to get data from a server or store data at a server.
     -goto app.module.ts
     -Add HttpClientModule from @angular/common/http
     -go to your component and inject HttpClient from @angular/common/http
-    -create post 
+    -create a post request
+ >this.http  
+ >>.post(  
+ >>>'https://ng-complete-guide-c56d3.firebaseio.com/posts.json',  
+ >>>postData  
+ >>
+ >>)
+ >>  
+ >>.subscribe(responseData => {  
+ >>>>console.log(responseData);  
+ >>  
+ >>}  
+ >
+ >);
 
-### Sending a post request to firebase
+    You need to subscribe to this request otherwise the request gets not executed.
+
+### Creating a get request
+
+    - Get data
+    - Set return type in get request.
+    - Transform data
+    - output our data
+
+![Alt-Text](angular.md.pictures/18-http.get.request.PNG)
+    
+    -get:   Create a get request. Get is an generic method which can be extended by the return type of the request.
+    -pipe:
+        -map: Is used to transform type of responseData to postsArray.
+    -subscribe:
+
+![Alt-Text](angular.md.pictures/18-http-get-post-model-interface.png)
+
+### Handle errors
+
+Each observable returns as a second parameter a way to access the error if available.
+
+![Alt-Text](angular.md.pictures/18-http-observable-error-handling.png)
+
+### Http Header and Query params
+
+![Alt-Text](angular.md.pictures/18-http-header-and-query.png)
+
+### Http response events and response type
+
+![Alt-Test](angular.md.pictures/18-http-response-events.png)
+
+Event Types can be
+    - Sent
+    - Response
+    - ...
+
+Response Types can be
+    - Text
+    - json
+    - ...
+
+### Http Interceptors
+
+Intercepts and handles an HttpRequest or HttpResponse.
 
 
 ## 19 Course Project - Http
