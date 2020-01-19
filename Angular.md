@@ -181,6 +181,52 @@ Does not retrieve elements or directives that are in other components' templates
 
 ## 7 Directives Deep Dive
 
+An Attribute directive changes the appearance or behavior of a DOM element.
+
+There are three kinds of directives in Angular:
+
+    1. Components—directives with a template.
+    2. Structural directives—change the DOM layout by adding and removing DOM elements.
+        - ngif
+        - ngfor
+    3. Attribute directives—change the appearance or behavior of an element, component, or another directive.
+        - ngclass
+        - ngstyle
+
+### Generate a directive by CLI
+
+>ng generate directive \<directiveName>
+>
+>oder
+>
+>ng g d \<directiveName>
+
+### Basic directive
+
+Uses the ***ElementRef*** to change DOM element.
+
+![Alt-Test](angular.md.pictures/7-directive_basic.png)
+
+### Better directive with renderer
+
+Uses the ***Renderer*** to change DOM element. This works
+with service workers too! see <https://angular.io/guide/service-worker-intro>
+
+![Alt-Test](angular.md.pictures/7-directive_better.png)
+
+It uses HostListener to execute code after some event occurred, like mouse or keyboard events.
+It changes the DOM element by using the renderer. See commented lines in the picture above.
+
+### Better directive using HostBinding
+
+Decorator that marks a DOM property as a host-binding property and supplies configuration metadata. Angular automatically checks host property bindings during change detection, and if a binding changes it updates the host element of the directive.
+
+![Alt-Test](angular.md.pictures/7-directive_better.png)
+
+This example uses HostBinding to change an attribute of a DOM element.
+
+### 
+
 ## 8 Course Project - Directives
 
 ## 9 Using Services & Dependency Injection
