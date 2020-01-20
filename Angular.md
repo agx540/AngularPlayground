@@ -231,9 +231,43 @@ This example uses HostBinding to change an attribute of a DOM element.
 
 ## 9 Using Services & Dependency Injection
 
-### @Injectable
+### Dependency Injector
+
+Angular uses a ***Hierachical Injector***. There are 3 level where you can provide a class.
+
+    1. AppModule.ts
+    2. AppComponent.ts
+    3. SomeComponent.ts
+
+![Alt-Text](angular.md.pictures/9-DI_hierarchical_Injector.png)
+
+### @Injectable registers a class into DI container root object
+
+![Alt-Text](angular.md.pictures/9-DI_Injectable.png)
 
 Decorator that marks a class as available to be provided and injected as a dependency.
+
+***providedIn: 'root'*** means it is registered in the root (=AppModule.ts)of the hierarchy.
+
+### Inject into a class
+>@Component({
+>>
+>>provider: [ClassNameToProvideInAComponent]
+>
+>})
+
+If you add the Class in provider array you get an new instance for this component. If you want an instance of a level more to the root, remove it from
+the provider array.
+
+Use
+If you add a typed property in the constructor of a component class, Angular
+injects an object of this class. Because Angular instanciate component classes.
+
+### Inject a object into a class
+
+Use @Injectable to tell Angular there needs to be at least one object injected into the constructor of this class.
+
+This can be used to inject an object into a service.
 
 ## 10 Course Project - Services & Dependency Injection
 
@@ -367,7 +401,7 @@ Used to get data from a server or store data at a server.
     - output our data
 
 ![Alt-Text](angular.md.pictures/18-http.get.request.PNG)
-    
+
     -get:   Create a get request. Get is an generic method which can be extended by the return type of the request.
     -pipe:
         -map: Is used to transform type of responseData to postsArray.
