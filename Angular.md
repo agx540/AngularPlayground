@@ -1,58 +1,10 @@
-
-
-# ng commands
-
-## Create new angular project
-
-Creates a new Angular project.
-
->_ng new project \<projectname>_
-
-## Start development server
-
-Start Angular live devolopment server.
-
->_ng serve_
-
-## ng generate component
-
-Create a full component in src folder
->_ng generate component \<name>_
-
-oder
-
->_ng g c \<name>_
-
-# npm commands
-
-
-## Install bootstrap
-
-Install newest version of bootstrap
-
->_npm install --save bootstrap_
-
-## Fix severity vulnerabilities
-
-Fix severity vulnerabilities in project.
-
->_npm audit fix_
-
-# manual project changes
-
-## add bootstrap to new project
-
-Add "./node_modules/bootstrap/dist/css/bootstrap.min.css" line in .angular-cli.json file in app.styles array.
-
->see example 1.1
-
-# angular
+# title
 
 ## 1 Getting started
 
 ### Setup Development Environment
 
-    1. Get newest NodeJs from nodejs.org 
+    1. Get newest NodeJs from nodejs.org
     2. run _npm install -g npm_
     3. run _npm uninstall -g angular/cli_
     4. run _npm cache clean_
@@ -64,7 +16,7 @@ Add "./node_modules/bootstrap/dist/css/bootstrap.min.css" line in .angular-cli.j
 
 ### Databinding: ngModel
 
->_\<input type="text" [(ngModel)]="name">_
+> _\<input type="text" [(ngModel)]="name">_
 
 It accepts a domain model as an optional Input. If you have a one-way binding to ngModel with [] syntax, changing the value of the domain model in the component class sets the value in the view. If you have a two-way binding with [()] syntax (also known as 'banana-box syntax'), the value in the UI always syncs back to the domain model in your class.
 
@@ -72,45 +24,50 @@ It accepts a domain model as an optional Input. If you have a one-way binding to
 
 One way databinding from model to view
 
->_{{propertyName}}_
+> _{{propertyName}}_
 
 ### Directive: ngIf
 
->_\<div *ngIf="condition">
->>Content to render when condition is true.
+> \_\<div \*ngIf="condition">
 >
->\</div>_
+> > Content to render when condition is true.
+>
+> \</div>\_
 
 ### Directive: ngFor
 
 Example 1
 
->_\<app-server *ngFor="let server of servers">\</app-server>_
+> _\<app-server \*ngFor="let server of servers">\</app-server>_
 
 Example 2
->\<div
->>*ngFor="let logItem of log; let i = index"..\
->>[ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"\
->>[ngClass]="{'white-text': i >= 4}"\>\
->>{{ logItem }}
+
+> \<div
 >
->\</div>
+> > \*ngFor="let logItem of log; let i = index"..\
+> > [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"\
+> > [ngClass]="{'white-text': i >= 4}"\>\
+> > {{ logItem }}
+>
+> \</div>
 
 ### Directive: ngClass
 
->\<p
->>[ngClass]="{online: serverStatus === 'online'}">\
->>{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}
+> \<p
 >
->\</p>
+> > [ngClass]="{online: serverStatus === 'online'}">\
+> > {{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}
+>
+> \</p>
 
 ### Directive: ngStyle
 
->\<p
->>[ngStyle]="{backgroundColor: getColor()}"\
->>{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}
+> \<p
 >
->\</p>
+> > [ngStyle]="{backgroundColor: getColor()}"\
+> > {{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}
+>
+> \</p>
 
 ## 3 Course Project Basics
 
@@ -126,44 +83,45 @@ Angular CLI adds SourceMaps to Javascript files when it sets up bundles for the 
 mode.
 
 Access TypeScript files:
+
 > Chrome-> F12 -> Sources -> top -> webpack -> . -> src -> app
 
 Here you find your TypeScript file like in your dev environment.
 
 ### Use Augury
 
-Augury is a chrome extension to debbug your Angular app. 
-You can see your Router, Components and Models. Helps you 
+Augury is a chrome extension to debbug your Angular app.
+You can see your Router, Components and Models. Helps you
 understand and analyse your Angular app at runtime.
 
 ## 5 Databinding: Components & Databinding Deep Dive
 
 ### Component life cycle
 
-| Event                   | Description
-| ------------------------|-------------------------------------------------------------------------------
-| ngOnChanges             | Called after a bound input property changes
-| ngOnInit                | Called once the component is initialized
-| ngDoCheck               | Called during every change detection run
-| ngAfterContentInit      | Called after content (ng-content) has been projected into view
-| ngAfterContentChecked   | Called every time the projected content has been checked
-| ngAfterViewInit         | Called after the component’s view (and child views) has been initialized
-| ngAfterViewChecked      | Called every time the view (and child views) have been checked
-| ngOnDestroy             | Called once the component is about to be destroyed
+| Event                 | Description                                                              |
+| --------------------- | ------------------------------------------------------------------------ |
+| ngOnChanges           | Called after a bound input property changes                              |
+| ngOnInit              | Called once the component is initialized                                 |
+| ngDoCheck             | Called during every change detection run                                 |
+| ngAfterContentInit    | Called after content (ng-content) has been projected into view           |
+| ngAfterContentChecked | Called every time the projected content has been checked                 |
+| ngAfterViewInit       | Called after the component’s view (and child views) has been initialized |
+| ngAfterViewChecked    | Called every time the view (and child views) have been checked           |
+| ngOnDestroy           | Called once the component is about to be destroyed                       |
 
 ### @Input
 
-Decorator that marks a class field as an input property and supplies configuration metadata. The input property is bound to a DOM property in the template. During change detection, Angular automatically updates the data property with the DOM property's value.
+Decorator that marks a class field as an input property and supplies configuration metadata. The input property is bound to a DOM property in the template. During change detection, Angular   matically updates the data property with the DOM property's value.
 
 ### @Output()
 
-Decorator that marks a class field as an output property and supplies configuration metadata. The DOM property bound to the output property is automatically updated during change detection.
+Decorator that marks a class field as an output property and supplies configuration metadata. The DOM property bound to the output property is   matically updated during change detection.
 
 ### EventEmitter\<type>
 
 Use in components with the @Output directive to emit custom events synchronously or asynchronously, and register handlers for those events by subscribing to an instance.
 
->@Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string}>();
+> @Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string}>();
 
 ### @ViewChild
 
@@ -195,21 +153,21 @@ There are three kinds of directives in Angular:
 
 ### Generate a directive by CLI
 
->ng generate directive \<directiveName>
+> ng generate directive \<directiveName>
 >
->oder
+> oder
 >
->ng g d \<directiveName>
+> ng g d \<directiveName>
 
 ### Basic directive
 
-Uses the ***ElementRef*** to change DOM element.
+Uses the **_ElementRef_** to change DOM element.
 
 ![Alt-Test](angular.md.pictures/7-directive_basic.png)
 
 ### Better directive with renderer
 
-Uses the ***Renderer*** to change DOM element. This works
+Uses the **_Renderer_** to change DOM element. This works
 with service workers too! see <https://angular.io/guide/service-worker-intro>
 
 ![Alt-Test](angular.md.pictures/7-directive_better.png)
@@ -219,13 +177,11 @@ It changes the DOM element by using the renderer. See commented lines in the pic
 
 ### Better directive using HostBinding
 
-Decorator that marks a DOM property as a host-binding property and supplies configuration metadata. Angular automatically checks host property bindings during change detection, and if a binding changes it updates the host element of the directive.
+Decorator that marks a DOM property as a host-binding property and supplies configuration metadata. Angular   matically checks host property bindings during change detection, and if a binding changes it updates the host element of the directive.
 
 ![Alt-Test](angular.md.pictures/7-directive_better.png)
 
 This example uses HostBinding to change an attribute of a DOM element.
-
-### 
 
 ## 8 Course Project - Directives
 
@@ -233,7 +189,7 @@ This example uses HostBinding to change an attribute of a DOM element.
 
 ### Dependency Injector
 
-Angular uses a ***Hierachical Injector***. There are 3 level where you can provide a class.
+Angular uses a **_Hierachical Injector_**. There are 3 level where you can provide a class.
 
     1. AppModule.ts
     2. AppComponent.ts
@@ -247,14 +203,15 @@ Angular uses a ***Hierachical Injector***. There are 3 level where you can provi
 
 Decorator that marks a class as available to be provided and injected as a dependency.
 
-***providedIn: 'root'*** means it is registered in the root (=AppModule.ts)of the hierarchy.
+**_providedIn: 'root'_** means it is registered in the root (=AppModule.ts)of the hierarchy.
 
 ### Inject into a class
->@Component({
->>
->>provider: [ClassNameToProvideInAComponent]
+
+> @Component({
 >
->})
+> > provider: [ClassNameToProvideInAComponent]
+>
+> })
 
 If you add the Class in provider array you get an new instance for this component. If you want an instance of a level more to the root, remove it from
 the provider array.
@@ -277,7 +234,27 @@ This can be used to inject an object into a service.
 
 ## 13 Understanding Observables
 
-***Always unsubscribe a subscription!***
+Observables provide support for passing messages between publishers and subscribers in your application. Observables offer significant benefits over other techniques for event handling, asynchronous programming, and handling multiple values.
+
+Observables are declarative—that is, you define a function for publishing values, but it is not executed until a consumer subscribes to it. The subscribed consumer then receives notifications until the function completes, or until they unsubscribe.
+
+An observable can deliver multiple values of any type—literals, messages, or events, depending on the context. The API for receiving values is the same whether the values are delivered synchronously or asynchronously. Because setup and teardown logic are both handled by the observable, your application code only needs to worry about subscribing to consume values, and when done, unsubscribing. Whether the stream was keystrokes, an HTTP response, or an interval timer, the interface for listening to values and stopping listening is the same.
+
+Because of these advantages, observables are used extensively within Angular, and are recommended for app development as well.
+
+![alt](./angular.md.pictures/13-observables_overview_progress.png)
+
+### Defining observers
+
+A handler for receiving observable notifications implements the Observer interface. It is an object that defines callback methods to handle the three types of notifications that an observable can send:
+
+| NOTIFICATION TYPE | DESCRIPTION |
+| - | - |
+| next | Required. A handler for each delivered value. Called zero or more times after execution starts.
+| error | Optional. A handler for an error notification. An error halts execution of the observable instance.
+| complete | Optional. A handler for the execution-complete notification. Delayed values can continue to be delivered to the next handler after execution is complete. |
+
+**_Always unsubscribe a subscription!_**
 
 ## 14 Course Project Observables
 
@@ -329,12 +306,13 @@ or
 
 ### Pure pipe
 
->@pipe\
->{  
->>name: nameOfPipe,\
->>pure: false; //default value is true  
+> @pipe\
+> {
 >
->}
+> > name: nameOfPipe,\
+> > pure: false; //default value is true
+>
+> }
 
 When true, the pipe is pure, meaning that the transform() method is invoked only when its input arguments change. Pipes are pure by default.
 
@@ -377,19 +355,23 @@ Used to get data from a server or store data at a server.
     -Add HttpClientModule from @angular/common/http
     -go to your component and inject HttpClient from @angular/common/http
     -create a post request
- >this.http  
- >>.post(  
- >>>'https://ng-complete-guide-c56d3.firebaseio.com/posts.json',  
- >>>postData  
- >>
- >>)
- >>  
- >>.subscribe(responseData => {  
- >>>>console.log(responseData);  
- >>  
- >>}  
- >
- >);
+
+> this.http
+>
+> > .post(
+> >
+> > > '<https://ng-complete-guide-c56d3.firebaseio.com/posts.json',>  
+> > > postData
+> >
+> > )
+> >
+> > .subscribe(responseData => {
+> >
+> > > > console.log(responseData);
+> >
+> > }
+>
+> );
 
     You need to subscribe to this request otherwise the request gets not executed.
 
@@ -421,22 +403,15 @@ Each observable returns as a second parameter a way to access the error if avail
 
 ### Http response events and response type
 
-![Alt-Test](angular.md.pictures/18-http-response-events.png)
+![Alt-Text](angular.md.pictures/18-http-response-events.png)
 
-Event Types can be
-    - Sent
-    - Response
-    - ...
+Event Types can be - Sent - Response - ...
 
-Response Types can be
-    - Text
-    - json
-    - ...
+Response Types can be - Text - json - ...
 
 ### Http Interceptors
 
 Intercepts and handles an HttpRequest or HttpResponse.
-
 
 ## 19 Course Project - Http
 
@@ -449,6 +424,73 @@ Intercepts and handles an HttpRequest or HttpResponse.
 ## 23 Deploying an Angular App
 
 ## 24 Bonus: Working with ngRx in our Project
+
+### ngRx Overview
+
+NgRx provides state management for creating maintainable explicit applications, by storing single state and the use of actions in order to express state changes.
+
+![Alt-Text](angular.md.pictures/ngrx_state-management-lifecycle.png)
+
+    1. Store
+
+A **store** holds the whole state tree of your application. The only way to change the state inside it is to dispatch an action on it.
+
+    2. Action
+**Actions** describe unique events that are dispatched from components and services.
+
+    3. Reducer
+State changes are handled by pure functions called **Reducers** that take the current state and the latest action to compute a new state.
+
+    4. Effects
+**Effects** are an RxJS powered side effect model for Store. Effects use streams to provide new sources of actions to reduce state based on external interactions such as network requests, web socket messages and time-based events.
+
+    5. Selector
+
+**Selectors** are pure functions used to select, derive and compose pieces of state.
+
+    6. Component
+A component controls a patch of screen called a view.
+
+    7. Service
+Components shouldn't fetch or save data directly and they certainly shouldn't knowingly present fake data. They should focus on presenting data and delegate data access to a service.
+
+**Services** are a great way to share information among classes that don't know each other.
+
+### Store
+
+A store holds the whole state tree of your application. The only way to change the state inside it is to dispatch an action on it.
+
+A store is not a class. It's just an object with a few methods on it. To create it, pass your root reducing function to createStore.
+
+#### disptach(action)
+
+Dispatches an action. This is the only way to trigger a state change.
+
+#### subscribe(listener)
+
+Adds a change listener. It will be called any time an action is dispatched, and some part of the state tree may potentially have changed. You may then call getState() to read the current state tree inside the callback.
+
+### Reducer
+
+A reducer (also called a reducing function) is a function that accepts an accumulation and a value and returns a new accumulation. They are used to reduce a collection of values down to a single value.
+
+Reducers are not unique to Redux—they are a fundamental concept in functional programming. Even most non-functional languages, like JavaScript, have a built-in API for reducing. In JavaScript, it's Array.prototype.reduce().
+
+In Redux, the accumulated value is the state object, and the values being accumulated are actions. Reducers calculate a new state given the previous state and an action. They must be pure functions—functions that return the exact same output for given inputs. They should also be free of side-effects. This is what enables exciting features like hot reloading and time travel.
+
+Reducers are the most important concept in Redux.
+
+Do not put API calls into reducers.
+
+### Action
+
+type Action = Object
+
+An action is a plain object that represents an intention to change the state. Actions are the only way to get data into the store. Any data, whether from UI events, network callbacks, or other sources such as WebSockets needs to eventually be dispatched as actions.
+
+Actions must have a type field that indicates the type of action being performed. Types can be defined as constants and imported from another module. It's better to use strings for type than Symbols because strings are serializable.
+
+Other than type, the structure of an action object is really up to you. If you're interested, check out Flux Standard Action for recommendations on how actions should be constructed.
 
 ## 25 Bonus: Angular Universal
 
@@ -464,4 +506,69 @@ Intercepts and handles an HttpRequest or HttpResponse.
 
 ## 31 Custom Project & Workflow Setup
 
-## 32 Bonus: TypeScript Introduction (for Angular 2 Usage)
+## 32 Bonus: TypeScript Introduction (for Angular 2 Usage
+
+### ... Spread Operator
+
+The spread operator is the opposite of destructuring. It allows you to spread an array into another array, or an object into another object. For example:
+
+let first = [1, 2];
+let second = [3, 4];
+let bothPlus = [0, ...first, ...second, 5];
+
+### Cast string to number
+
+var x = "32";  
+var y = +x; // y: number
+
+#### truthy to true, falsy to false
+
+var b = !!"2"; // the !! converts truthy to true, and falsy to false
+
+## 34 How to handle dev environment
+
+### ng commands
+
+#### Create new angular project
+
+Creates a new Angular project.
+
+> _ng new project \<projectname>_
+
+#### Start development server
+
+Start Angular live devolopment server.
+
+> _ng serve_
+
+#### ng generate component
+
+Create a full component in src folder
+
+> _ng generate component \<name>_
+
+oder
+
+> _ng g c \<name>_
+
+### Install bootstrap
+
+Install newest version of bootstrap
+
+> _npm install --save bootstrap_
+
+### Fix severity vulnerabilities
+
+Fix severity vulnerabilities in project.
+
+> _npm audit fix_
+
+### manual project changes
+
+a
+
+#### add bootstrap to new project
+
+Add "./node_modules/bootstrap/dist/css/bootstrap.min.css" line in .angular-cli.json file in app.styles array.
+
+> see example 1.1
