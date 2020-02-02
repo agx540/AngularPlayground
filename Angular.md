@@ -462,7 +462,7 @@ A store holds the whole state tree of your application. The only way to change t
 
 A store is not a class. It's just an object with a few methods on it. To create it, pass your root reducing function to createStore.
 
-#### disptach(action)
+#### dispatch(action)
 
 Dispatches an action. This is the only way to trigger a state change.
 
@@ -491,6 +491,28 @@ An action is a plain object that represents an intention to change the state. Ac
 Actions must have a type field that indicates the type of action being performed. Types can be defined as constants and imported from another module. It's better to use strings for type than Symbols because strings are serializable.
 
 Other than type, the structure of an action object is really up to you. If you're interested, check out Flux Standard Action for recommendations on how actions should be constructed.
+
+### Effects
+
+Effects are an RxJS powered side effect model for Store. Effects use streams to provide new sources of actions to reduce state based on external interactions such as network requests, web socket messages and time-based events.
+
+### Redux devtools extensions
+
+Visualize dispatched actions of your application and let you browse to your store data. You can also go back in time to simulate your application usage.
+
+1. Add redux devtools to your browser.
+2. npm install --save-dev @ngrx/store-devtools
+3. restart ng serve
+4. go to app.module.ts and add StoreDevtoolsModule from @ngrx/store-devtools
+5. StoreDevtoolsModule.instrument({logOnly: environment.production})
+
+### Router-store
+
+Helps you analyse ngrx routing actions.
+
+1. Add npm install --save @ngrx/router-store
+2. go to app.module.ts and add StoreRouterConnectionModule from @ngrx/router-store
+3. StoreRouterConnectingModule.forRoot()
 
 ## 25 Bonus: Angular Universal
 
@@ -525,7 +547,37 @@ var y = +x; // y: number
 
 var b = !!"2"; // the !! converts truthy to true, and falsy to false
 
-## 34 How to handle dev environment
+## 34 rxjs
+
+RxJS is a library for composing asynchronous and event-based programs by using observable sequences. It provides one core type, the Observable, satellite types (Observer, Schedulers, Subjects) and operators inspired by Array#extras (map, filter, reduce, every, etc) to allow handling asynchronous events as collections.
+
+### operators
+
+#### map
+
+Applies a given project function to each value emitted by the source Observable, and emits the resulting values as an Observable.
+
+#### of
+
+Converts the arguments to an observable sequence
+
+#### tap
+
+Perform a side effect for every emission on the source Observable, but return an Observable that is identical to the source.
+
+#### fiter
+
+Filter items emitted by the source Observable by only emitting those that satisfy a specified predicate.
+
+#### switchMap
+
+Projects each source value to an Observable which is merged in the output Observable, emitting values only from the most recently projected Observable.
+
+#### take
+
+Emits only the first count values emitted by the source Observable.
+
+## 35 How to handle dev environment
 
 ### ng commands
 
