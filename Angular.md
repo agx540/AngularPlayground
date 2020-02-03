@@ -553,10 +553,11 @@ var b = !!"2"; // the !! converts truthy to true, and falsy to false
 RxJS is a library for composing asynchronous and event-based programs by using observable sequences. It provides one core type, the Observable, satellite types (Observer, Schedulers, Subjects) and operators inspired by Array#extras (map, filter, reduce, every, etc) to allow handling asynchronous events as collections.
 
 ### operators
-=======
+
 RxJS is a library for reactive programming using Observables, to make it easier to compose asynchronous or callback-based code. This project is a rewrite of Reactive-Extensions/RxJS with better performance, better modularity, better debuggable call stacks, while staying mostly backwards compatible, with some breaking changes that reduce the API surface
 
 ### Introduction
+
 RxJS is a library for composing asynchronous and event-based programs by using observable sequences. It provides one core type, the Observable, satellite types (Observer, Schedulers, Subjects) and operators inspired by Array#extras (map, filter, reduce, every, etc) to allow handling asynchronous events as collections.
 
 > Think of RxJS as Lodash for events.
@@ -605,17 +606,15 @@ Buffers the source Observable values until the size hits the maximum bufferSize 
 Collects values from the past as an array, and emits that array only when its size reaches bufferSize.
 
 ![Alt-Text](./angular.md.pictures/rxjs_bufferCount_operator.png)
->>>>>>> 5857f464c0663eb1faab4805c5dec1097ad8b29d
 
 #### map
 
 Applies a given project function to each value emitted by the source Observable, and emits the resulting values as an Observable.
 
-<<<<<<< HEAD
 #### of
 
 Converts the arguments to an observable sequence
-=======
+
 Like Array.prototype.map(), it passes each source value through a transformation function to get corresponding output values.
 
 ![Alt-Text](./angular.md.pictures/rxjs_map_operator.png)
@@ -633,39 +632,13 @@ Like Array.prototype.filter(), it only emits a value from the source if it passe
 
 Perform a side effect for every emission on the source Observable, but return an Observable that is identical to the source.
 
-<<<<<<< HEAD
 #### fiter
 
 Filter items emitted by the source Observable by only emitting those that satisfy a specified predicate.
 
-#### switchMap
-
-Projects each source value to an Observable which is merged in the output Observable, emitting values only from the most recently projected Observable.
-
 #### take
 
 Emits only the first count values emitted by the source Observable.
-=======
-Intercepts each emission on the source and runs a function, but returns an output which is identical to the source as long as errors don't occur.
-
-#### take(\<count>)
-
-Only get the count of elements you specify.
-
-![Alt-Text](./angular.md.pictures/rxjs_take_operator.png)
-
-#### scan
-
-Scan apply a function to each item emitted by an Observable, sequentially, and emit each successive value.
-
-![Alt-Text](./angular.md.pictures/rxjs_scan_operator.png)
-
-#### reduce
-
-Reduce apply a function to each item emitted by an Observable, sequentially, and emit the final value.
-
-![Alt-Text](./angular.md.pictures/rxjs_reduce_operator.png)
->>>>>>> 5857f464c0663eb1faab4805c5dec1097ad8b29d
 
 ## 35 How to handle dev environment
 
