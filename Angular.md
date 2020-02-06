@@ -6,25 +6,20 @@ This document contains my notes to an angular course on udemy.
 ## How Synectics use it
 
     - Angular 8 as main framework
-    - IDE we use Webstorm
+    - Webstorm as an IDE
     - Typescript as language for procedural code
     - HTML as GUI language
+    - SASS to styling html pages
     - Observable
     - Material Design to build our GUI in "Synx" Style
     - RxJs
     - Redux
-    - SASS to styling html pages
     - Difference between development and production
         - ???
 
 ### Where to find it
 
     - New stuff: Technology Extensions Repo -> Frontend -> CloudServices Angular
-
-## 0 What I have learned
-
-- Markdown language
-- Visual Studio Code
 
 ## 1 Getting started
 
