@@ -543,13 +543,19 @@ Helps you analyse ngrx routing actions.
 
 ### animations
 
-#### trigger
+In the component file, add a metadata property called animations: within the @Component() decorator. You put the trigger that defines an animation within the animations metadata property.
 
-##### state
+![Alt-Next](./angular.md.pictures/26-triggering-the-animation.png)
 
-##### transition
+![Alt-Next](./angular.md.pictures/26-html-Annotation-animation.jpg)
 
-###### animate
+![Alt-Next](./angular.md.pictures/26-javascript-Annotation-animation.jpg)
+
+For more see Angular Website:
+<https://angular.io/guide/animations>
+
+Keyframe Animation
+<https://angular.io/guide/transition-and-triggers>
 
 ## 27 Adding Offline Capabilities with Service Workers
 
