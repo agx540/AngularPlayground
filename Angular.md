@@ -630,7 +630,7 @@ Helps you analyse ngrx routing actions.
 
 ## 26 Angular Animations
 
-### How to add to project
+### How to add to projects
 
 - You probably need to install the new animations package (running the command never hurts): _npm install --save @angular/animations_
 - Add the **BrowserAnimationsModule**  to your imports[]  array in AppModule
@@ -824,3 +824,47 @@ a
 Add "./node_modules/bootstrap/dist/css/bootstrap.min.css" line in .angular-cli.json file in app.styles array.
 
 > see example 1.1
+
+## 36 SASS
+
+### VS Code Extensions
+
+Add Live Sass Compiler to VS Code to have SASS support.
+
+![Alt-Text](./angular.md.pictures/2020-02-06-16-50-41.png)
+
+### How to use it
+
+#### variables
+
+see $primaryBtn:
+
+#### organize your style hierachically
+
+see header -> button
+
+#### add style to mouse events
+
+see **&:hover**
+
+#### seperate you code into muliple files
+
+@import '<fileName>';
+
+It can be used to save all colors in one file.
+
+#### @mixin
+
+Mixin allows you to define styles that can be re-used throughout your stylesheet.
+
+![Alt-Text](./angular.md.pictures/2020-02-06-16-49-07.png)
+
+#### Use variables in mixin
+
+![Alt-Text](./angular.md.pictures/2020-02-06-16-56-12.png)
+
+#### @extend
+
+> @extend header
+
+You can inherent from a base style.
