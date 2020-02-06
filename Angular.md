@@ -518,6 +518,17 @@ Helps you analyse ngrx routing actions.
 
 ## 26 Angular Animations
 
+### How to add to project
+
+- You probably need to install the new animations package (running the command never hurts): npm install --save @angular/animations
+- Add the BrowserAnimationsModule  to your imports[]  array in AppModule
+- This Module needs to be imported from @angular/platform-browser/animations'  => import { BrowserAnimationsModule } from '@angular/platform-browser/animations' (in the AppModule!)
+- You then import trigger , state , style  etc from @angular/animations  instead of @angular/core
+
+### How to add to components
+
+
+
 ## 27 Adding Offline Capabilities with Service Workers
 
 ## 28 A Basic Introduction to Unit Testing in Angular Apps
