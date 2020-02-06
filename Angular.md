@@ -1,5 +1,19 @@
 # title
 
+## 0 How Synectics use it
+
+    - Angular 8 as main framework
+    - IDE we use Webstorm
+    - Typescript as language for procedural code
+    - HTML as GUI language
+    - Material Design to build our 
+    - RxJs
+    - Redux
+
+### Where to find it
+
+    - New stuff: Technology Extensions Repo -> Frontend -> CloudServices Angular
+
 ## 1 Getting started
 
 ### Setup Development Environment
@@ -520,14 +534,22 @@ Helps you analyse ngrx routing actions.
 
 ### How to add to project
 
-- You probably need to install the new animations package (running the command never hurts): npm install --save @angular/animations
-- Add the BrowserAnimationsModule  to your imports[]  array in AppModule
-- This Module needs to be imported from @angular/platform-browser/animations'  => import { BrowserAnimationsModule } from '@angular/platform-browser/animations' (in the AppModule!)
+- You probably need to install the new animations package (running the command never hurts): _npm install --save @angular/animations_
+- Add the **BrowserAnimationsModule**  to your imports[]  array in AppModule
+- This Module needs to be imported from @angular/platform-browser/animations'  => import { **BrowserAnimationsModule** } from '@angular/platform-browser/animations' (in the AppModule!)
 - You then import trigger , state , style  etc from @angular/animations  instead of @angular/core
 
 ### How to add to components
 
+### animations
 
+#### trigger
+
+##### state
+
+##### transition
+
+###### animate
 
 ## 27 Adding Offline Capabilities with Service Workers
 
