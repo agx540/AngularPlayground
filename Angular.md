@@ -1,24 +1,30 @@
-# title
+# The complete Guide to Angular 2 (2019)
 
+This document contains my notes to an angular course on udemy.
+<https://www.udemy.com/course/the-complete-guide-to-angular-2/>
 
-## 0 How Synectics use it
+## How Synectics use it
 
     - Angular 8 as main framework
     - IDE we use Webstorm
     - Typescript as language for procedural code
     - HTML as GUI language
-    - Material Design to build our 
+    - Observable
+    - Material Design to build our GUI in "Synx" Style
     - RxJs
     - Redux
+    - SASS to styling html pages
+    - Difference between development and production
+        - ???
 
 ### Where to find it
 
     - New stuff: Technology Extensions Repo -> Frontend -> CloudServices Angular
 
-## What I have learned
+## 0 What I have learned
 
 - Markdown language
-- 
+- Visual Studio Code
 
 ## 1 Getting started
 
@@ -307,29 +313,30 @@ RouterLinkActiveOptions allows you to use active css for this link only if it is
 >\</li>
 
 ### Navigation through javascript code
+
 ![Alt-Text](angular.md.pictures\11-navigate-to-component-by-code.jpg)
 
 >this.router.navigate(['servers'])
 
 The Navigate method don't now what is the current route.
 
+### Dynamic parameters in Routes
 
+#### add dynamic elements to route definition
 
+>{path: 'users/:id/:name', component: UserComponent}
 
+**:id** and **:name** is a dynamic part of the path of the route.  
 
+#### Fetching dynamic parameters from routes
 
+![Alt-Text](./angular.md.pictures/11-retrieve-parameters-from-routes.jpg)
 
+Use ActivatedRoute to get an snapshot from the current route.
 
+#### get continues route changed notifications
 
-
-
-
-
-
-
-
-
-
+![Alt-Text](./angular.md.pictures/11-retrieve-parameters-from-routes-after-oninit-is-called.jpg)
 
 ### Read more
 
