@@ -1,5 +1,6 @@
 # title
 
+
 ## 0 How Synectics use it
 
     - Angular 8 as main framework
@@ -13,6 +14,11 @@
 ### Where to find it
 
     - New stuff: Technology Extensions Repo -> Frontend -> CloudServices Angular
+
+## What I have learned
+
+- Markdown language
+- 
 
 ## 1 Getting started
 
@@ -244,7 +250,90 @@ This can be used to inject an object into a service.
 
 ## 11 Changing Pages with Routing
 
+The browser is a familiar model of application navigation:
 
+- Enter a URL in the address bar and the browser navigates to a corresponding page.
+- Click links on the page and the browser navigates to a new page.
+- Click the browser's back and forward buttons and the browser navigates backward and forward through the history of pages you've seen.
+
+The Angular Router ("the router") borrows from this model. It can interpret a browser URL as an instruction to navigate to a client-generated view. It can pass optional parameters along to the supporting view component that help it decide what specific content to present. You can bind the router to links on a page and it will navigate to the appropriate application view when the user clicks a link. You can navigate imperatively when the user clicks a button, selects from a drop box, or in response to some other stimulus from any source. And the router logs activity in the browser's history journal so the back and forward buttons work as well.
+
+### How to add to project
+
+>src/app/app.module.ts (import)
+>>import { RouterModule, Routes } from '@angular/router';
+
+### Router outlet
+
+The RouterOutlet is a directive from the router library that is used like a component. It acts as a placeholder that marks the spot in the template where the router should display the components for that outlet.
+
+In html you need to add this:
+
+>\<router-outlet>\</router-outlet>\
+>\<!-- Routed components go here -->
+
+### Define Routes
+
+![Alt-Text](./angular.md.pictures/11-define-routes-in-app-module.png.jpg)
+
+### href
+
+If you use **href** browser loads whole application.
+
+### RouterLink Directives
+
+>\<a routerLink="/crisis-center" routerLinkActive="active">Crisis Center\</a>
+
+A router link is used to navigate from one to another component like is defined
+it in the routes.
+
+A RouterLink Directives always nows it current route.
+
+### RouterLinkActive Directive
+
+>\<a routerLink="/crisis-center" routerLinkActive="active">Crisis Center\</a>
+
+The RouterLinkActive directive toggles css classes for active RouterLink bindings based on the current RouterState.
+
+### RouterLinkActiveOptions Directive
+
+RouterLinkActiveOptions allows you to use active css for this link only if it is an excat match of the route.
+
+>\<li role="presentation"
+>>routerLinkActive="active"\
+>>[routerLinkActiveOptions]="{exact: true}">\
+>>\<a routerLink="/">Home\</a>
+>
+>\</li>
+
+### Navigation through javascript code
+![Alt-Text](angular.md.pictures\11-navigate-to-component-by-code.jpg)
+
+>this.router.navigate(['servers'])
+
+The Navigate method don't now what is the current route.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Read more
+
+<https://angular.io/guide/router>
 
 ## 12 Course Project - Routing
 
