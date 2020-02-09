@@ -259,12 +259,12 @@ The browser is a familiar model of application navigation:
 
 The Angular Router ("the router") borrows from this model. It can interpret a browser URL as an instruction to navigate to a client-generated view. It can pass optional parameters along to the supporting view component that help it decide what specific content to present. You can bind the router to links on a page and it will navigate to the appropriate application view when the user clicks a link. You can navigate imperatively when the user clicks a button, selects from a drop box, or in response to some other stimulus from any source. And the router logs activity in the browser's history journal so the back and forward buttons work as well.
 
-### How to add to project
+### 11. How to add to project
 
 >src/app/app.module.ts (import)
 >>import { RouterModule, Routes } from '@angular/router';
 
-### Router outlet
+### 11. Router outlet
 
 The RouterOutlet is a directive from the router library that is used like a component. It acts as a placeholder that marks the spot in the template where the router should display the components for that outlet.
 
@@ -273,15 +273,15 @@ In html you need to add this:
 >\<router-outlet>\</router-outlet>\
 >\<!-- Routed components go here -->
 
-### Define Routes
+### 11. Define Routes
 
 ![Alt-Text](./angular.md.pictures/11-define-routes-in-app-module.png.jpg)
 
-### href
+### 11. href
 
 If you use **href** browser loads whole application.
 
-### RouterLink Directives
+### 11. RouterLink Directives
 
 >\<a routerLink="/crisis-center" routerLinkActive="active">Crisis Center\</a>
 
@@ -290,13 +290,13 @@ it in the routes.
 
 A RouterLink Directives always nows it current route.
 
-### RouterLinkActive Directive
+### 11. RouterLinkActive Directive
 
 >\<a routerLink="/crisis-center" routerLinkActive="active">Crisis Center\</a>
 
 The RouterLinkActive directive toggles css classes for active RouterLink bindings based on the current RouterState.
 
-### RouterLinkActiveOptions Directive
+### 11. RouterLinkActiveOptions Directive
 
 RouterLinkActiveOptions allows you to use active css for this link only if it is an excat match of the route.
 
@@ -307,7 +307,7 @@ RouterLinkActiveOptions allows you to use active css for this link only if it is
 >
 >\</li>
 
-### Navigation through javascript code
+### 11. Navigation through javascript code
 
 ![Alt-Text](angular.md.pictures\11-navigate-to-component-by-code.jpg)
 
@@ -315,25 +315,44 @@ RouterLinkActiveOptions allows you to use active css for this link only if it is
 
 The Navigate method don't now what is the current route.
 
-### Dynamic parameters in Routes
+### 11. Dynamic parameters in Routes
 
-#### add dynamic elements to route definition
+#### 11.. add dynamic elements to route definition
 
 >{path: 'users/:id/:name', component: UserComponent}
 
 **:id** and **:name** is a dynamic part of the path of the route.  
 
-#### Fetching dynamic parameters from routes
+#### 11.. Fetching dynamic parameters from routes
 
 ![Alt-Text](./angular.md.pictures/11-retrieve-parameters-from-routes.jpg)
 
 Use ActivatedRoute to get an snapshot from the current route.
 
-#### get continues route changed notifications
+#### 11.. get continues route changed notifications
 
 ![Alt-Text](./angular.md.pictures/11-retrieve-parameters-from-routes-after-oninit-is-called.jpg)
 
-### Read more
+### 11. Set Query Parameters
+
+![Alt-Text](./angular.md.pictures/2020-02-09-12-05-24.png)
+set route in html
+
+![Alt-Text](./angular.md.pictures/2020-02-09-12-11-55.png)
+set route in typescript
+
+- routerLink: defines uri
+- queryParams: defines query params
+- fragment: defines an anker in the document
+
+### 11. Get Query Parameters
+
+![](./angular.md.pictures/2020-02-09-12-25-50.png)
+
+Use snapshot for get current value or subscribe to observables for continues
+updates on route params.
+
+### 11. Read more
 
 <https://angular.io/guide/router>
 
@@ -822,44 +841,52 @@ Add "./node_modules/bootstrap/dist/css/bootstrap.min.css" line in .angular-cli.j
 
 ## 36 SASS
 
-### VS Code Extensions
+### 36. VS Code Extensions
 
 Add Live Sass Compiler to VS Code to have SASS support.
 
 ![Alt-Text](./angular.md.pictures/2020-02-06-16-50-41.png)
 
-### How to use it
+### 36. How to use it
 
-#### variables
+#### 36.. variables
 
 see $primaryBtn:
 
-#### organize your style hierachically
+#### 36.. organize your style hierachically
 
 see header -> button
 
-#### add style to mouse events
+#### 36.. add style to mouse events
 
 see **&:hover**
 
-#### seperate you code into muliple files
+#### 36.. seperate you code into muliple files
 
 @import '<fileName>';
 
 It can be used to save all colors in one file.
 
-#### @mixin
+#### 36.. @mixin
 
 Mixin allows you to define styles that can be re-used throughout your stylesheet.
 
 ![Alt-Text](./angular.md.pictures/2020-02-06-16-49-07.png)
 
-#### Use variables in mixin
+#### 36.. Use variables in mixin
 
 ![Alt-Text](./angular.md.pictures/2020-02-06-16-56-12.png)
 
-#### @extend
+#### 36.. @extend
 
 > @extend header
 
 You can inherent from a base style.
+
+## 37 html
+
+### 37. a tag
+
+The \<a> tag defines a hyperlink, which is used to link from one page to another.
+
+The most important attribute of the \<a> element is the href attribute, which indicates the link's destination.
