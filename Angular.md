@@ -347,10 +347,18 @@ set route in typescript
 
 ### 11. Get Query Parameters
 
-![](./angular.md.pictures/2020-02-09-12-25-50.png)
+![Alt-Text](./angular.md.pictures/2020-02-09-12-25-50.png)
 
 Use snapshot for get current value or subscribe to observables for continues
 updates on route params.
+
+### 11. Nested Router
+
+
+![Alt-Text](./angular.md.pictures/2020-02-09-14-55-37.png)
+Add a nested route.
+
+And add a \<router-outlet>\<router-outlet> element in parent component which is used in routes list.
 
 ### 11. Read more
 
@@ -863,7 +871,7 @@ see **&:hover**
 
 #### 36.. seperate you code into muliple files
 
-@import '<fileName>';
+@import '\<fileName>';
 
 It can be used to save all colors in one file.
 
