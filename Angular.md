@@ -3,7 +3,7 @@
 This document contains my notes to an angular course on udemy.
 <https://www.udemy.com/course/the-complete-guide-to-angular-2/>
 
-## How Synectics use it
+## 0 How Synectics use it
 
     - Angular 8 as main framework
     - Webstorm as an IDE
@@ -17,11 +17,38 @@ This document contains my notes to an angular course on udemy.
     - Difference between development and production
         - ???
 
-### Where to find it
+### 0. Where to find it
 
     - New stuff: Technology Extensions Repo -> Frontend -> CloudServices Angular
 
-### Questions to Ben
+### 0. Setup cloud evidence locker angular project
+
+- nodejs version v10.16.3
+- Install Phython 2.7.17
+- run **npm install -g windows-build-tools@4.0.0** as an administrator
+- npm install -g vsts-npm-auth --registry https://registry.npmjs.com --always-auth false
+- run vsts-npm-auth -config .npmrc
+- go to Technology *'Extensions\Frontend\CloudEvidenceLockerAngular\'* folder an run npm install
+
+### 0. configure cloud evidence locker angular project
+
+ConfigService decides which configuration should be loaded:
+>Frontend\CloudEvidenceLockerAngular\src\app\config.service.ts
+
+It decides between DEV mode and production:
+
+>Frontend\CloudEvidenceLockerAngular\src\assets\environment-dev.txt
+>Frontend\CloudEvidenceLockerAngular\src\assets\environment.txt
+
+### 0. Start dev server
+
+run >npm start
+
+There are customized scripts in package.json file.
+
+![Alt-Test](angular.md.pictures/2020-02-10-16-01-09.png)
+
+### 0. Questions to Ben
 
 ## 1 Getting started
 
@@ -37,25 +64,6 @@ See nodejs development windows environment:
     - run _npm uninstall -g angular/cli_
     - run _npm cache clean_
     - run _npm install -g @angular/cli_
-
-### Setup cloud evidence locker angular project
-
-- nodejs version v10.16.3
-- Install Phython 2.7.17
-- run **npm install -g windows-build-tools@4.0.0** as an administrator
-- npm install -g vsts-npm-auth --registry https://registry.npmjs.com --always-auth false
-- run vsts-npm-auth -config .npmrc
-- go to Technology *'Extensions\Frontend\CloudEvidenceLockerAngular\'* folder an run npm install
-
-### configure cloud evidence locker angular project
-
-ConfigService decides which configuration should be loaded:
->Frontend\CloudEvidenceLockerAngular\src\app\config.service.ts
-
-It decides between DEV mode and production:
-
->Frontend\CloudEvidenceLockerAngular\src\assets\environment-dev.txt
->Frontend\CloudEvidenceLockerAngular\src\assets\environment.txt
 
 ## 2 Basics
 
