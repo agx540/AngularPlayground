@@ -27,11 +27,25 @@ This document contains my notes to an angular course on udemy.
 
 ### Setup Development Environment
 
-    1. Get newest NodeJs from nodejs.org
-    2. run _npm install -g npm_
-    3. run _npm uninstall -g angular/cli_
-    4. run _npm cache clean_
-    5. run _npm install -g @angular/cli_
+See nodejs development windows environment:
+<https://github.com/Microsoft/nodejs-guidelines/blob/master/windows-environment.md#compiling-native-addon-modules>
+
+    - Install vs_BuildTools.exe from 
+    - Install Visual Studio Code
+    - Get newest NodeJs from nodejs.org
+    - run _npm install -g npm_
+    - run _npm uninstall -g angular/cli_
+    - run _npm cache clean_
+    - run _npm install -g @angular/cli_
+
+### Setup cloud evidence locker angular project
+
+- nodejs version v10.16.3
+- Install Phython 2.7.17
+- run **npm install -g windows-build-tools@4.0.0** as an administrator
+- npm install -g vsts-npm-auth --registry https://registry.npmjs.com --always-auth false
+- run vsts-npm-auth -config .npmrc
+- go to Technology *'Extensions\Frontend\CloudEvidenceLockerAngular\'* folder an run npm install
 
 ## 2 Basics
 
