@@ -356,7 +356,6 @@ updates on route params.
 
 ### 11. Nested Router
 
-
 ![Alt-Text](./angular.md.pictures/2020-02-09-14-55-37.png)
 Add a nested route.
 
@@ -382,8 +381,6 @@ found have to be at the end of the list.
 See source code example in '11 - routing-final' folder.
 
 ### 11. Route Guards
-
-
 
 ### 11. Read more
 
