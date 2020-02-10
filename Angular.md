@@ -21,6 +21,8 @@ This document contains my notes to an angular course on udemy.
 
     - New stuff: Technology Extensions Repo -> Frontend -> CloudServices Angular
 
+### Questions to Ben
+
 ## 1 Getting started
 
 ### Setup Development Environment
@@ -359,6 +361,29 @@ updates on route params.
 Add a nested route.
 
 And add a \<router-outlet>\<router-outlet> element in parent component which is used in routes list.
+
+### 11. QueryParamsHandling
+
+How to handle query parameters in a router link. One of:
+
+- merge : Merge new with current parameters.
+- preserve : Preserve current parameters.
+
+### 11. Redirect and wildcard routes
+
+![Alt-Text](./angular.md.pictures/2020-02-10-09-59-02.png)
+
+This picture shows how to redirect to page not found component.
+Always keep in mind the order of the routes. Redirect to page not
+found have to be at the end of the list.
+
+### 11. Move routes to a routing module
+
+See source code example in '11 - routing-final' folder.
+
+### 11. Route Guards
+
+
 
 ### 11. Read more
 
