@@ -47,6 +47,16 @@ See nodejs development windows environment:
 - run vsts-npm-auth -config .npmrc
 - go to Technology *'Extensions\Frontend\CloudEvidenceLockerAngular\'* folder an run npm install
 
+### configure cloud evidence locker angular project
+
+ConfigService decides which configuration should be loaded:
+>Frontend\CloudEvidenceLockerAngular\src\app\config.service.ts
+
+It decides between DEV mode and production:
+
+>Frontend\CloudEvidenceLockerAngular\src\assets\environment-dev.txt
+>Frontend\CloudEvidenceLockerAngular\src\assets\environment.txt
+
 ## 2 Basics
 
 ### Component
