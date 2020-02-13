@@ -48,7 +48,19 @@ There are customized scripts in package.json file.
 
 ![Alt-Test](angular.md.pictures/2020-02-10-16-01-09.png)
 
+### 0. Get it deployed
+
+Build pipelines to create artifacts:
+![Alt-Test](angular.md.pictures/2020-02-13-13-44-33.png)
+
+Release pipline to release into runtime environment:
+
 ### 0. Questions to Ben
+
+- How you can debug it with break points.
+- Small course on CSS SCSS files
+- Different npm scripts
+- difference between dev and production
 
 ## 1 Getting started
 
@@ -414,6 +426,37 @@ See source code example in '11 - routing-final' folder.
 
 ### 11. Route Guards
 
+#### 11.. CanActivate Interface (protect navigate to a route)
+
+Interface that a class can implement to be a guard deciding if a route can be activated. If all guards return true, navigation will continue. If any guard returns false, navigation will be cancelled. If any guard returns a UrlTree, current navigation will be cancelled and a new navigation will be kicked off to the UrlTree returned from the guard.
+
+After implementing CanActivate interface you need to add it a route.
+
+![Alt-Text](./angular.md.pictures/2020-02-13-14-12-54.png)
+
+#### 11.. CanActivateChild Interface (protect navigate to a route)
+
+Interface that a class can implement to be a guard deciding if a child route can be activated. If all guards return true, navigation will continue. If any guard returns false, navigation will be cancelled. If any guard returns a UrlTree, current navigation will be cancelled and a new navigation will be kicked off to the UrlTree returned from the guard.
+
+So now this is the fine grained control you can implement to protect a whole route (CanActivate) and all its child routes or just the child routes (CanActivateChild), depending on which behavior you need in your app.
+
+#### 11.. CanDeactivate Interface (protect leave a route)
+
+Interface that a class can implement to be a guard deciding if a route can be deactivated. If all guards return true, navigation will continue. If any guard returns false, navigation will be cancelled. If any guard returns a UrlTree, current navigation will be cancelled and a new navigation will be kicked off to the UrlTree returned from the guard.
+
+#### 11.. Resolving dynamic data with Resolve Interface
+
+Interface that classes can implement to be a data provider. A data provider class can be used with the router to resolve data during navigation. The interface defines a resolve() method that will be invoked when the navigation starts. The router will then wait for the data to be resolved before the route is finally activated.
+
+#### 11.. Understanding Location Strategies
+
+All URLs are parsed by the hosting server first.
+
+**Hashtag Routing**:\
+A server only handle the part before the hashtag.
+You can enable it if your server don't be able to handle normal mode.
+![Alt-Text](./angular.md.pictures/2020-02-13-15-13-28.png)
+
 ### 11. Read more
 
 <https://angular.io/guide/router>
@@ -759,6 +802,18 @@ var y = +x; // y: number
 #### truthy to true, falsy to false
 
 var b = !!"2"; // the !! converts truthy to true, and falsy to false
+
+### Promise vs Observable
+
+**Promise**
+
+A Promise handles a single event when an async operation completes or fails.
+
+Note: There are Promise libraries out there that support cancellation, but ES6 Promise doesn't so far.
+
+**Observable**
+
+An Observable is like a Stream (in many languages) and allows to pass zero or more events where the callback is called for each event.
 
 ## 34 rxjs
 
