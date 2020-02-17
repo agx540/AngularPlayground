@@ -57,10 +57,24 @@ Release pipline to release into runtime environment:
 
 ### 0. Questions to Ben
 
+- What tools do we use
+    -Webstorm
+    -Angular
+    -SASS
+    -Typescript
+    -Webpack
+    -Redux
+    -...
 - How you can debug it with break points.
 - Small course on CSS SCSS files
 - Different npm scripts
 - difference between dev and production
+    - TS
+    - HTML
+    - CSS
+- How is it hosted
+- Do we use minifications?
+- How is Website mapped to projects
 
 ## 1 Getting started
 
@@ -193,6 +207,16 @@ Use in components with the @Output directive to emit custom events synchronously
 ### @ViewChild
 
 Property decorator that configures a view query. The change detector looks for the first element or the directive matching the selector in the view DOM. If the view DOM changes, and a new child matches the selector, the property is updated.
+
+You can add a local reference to a DOM element. This reference can be used in typescript code to get access to the html element.
+
+HTML:
+
+<element #reference>
+
+Typescript:
+
+@ViewChild('reference', { static: false }) elementProperty: Element;
 
 ### @ContentChild
 
@@ -503,7 +527,24 @@ Reactive forms are more robust: they're more scalable, reusable, and testable. I
 Template-driven forms are useful for adding a simple form to an app, such as an email list signup form. They're easy to add to an app, but they don't scale as well as reactive forms. If you have very basic form requirements and logic that can be managed solely in the template, use template-driven forms.
 This guide provides information to help you decide which type of form works best for your situation. It introduces the common building blocks used by both approaches. It also summarizes the key differences between the two approaches, and demonstrates those differences in the context of setup, data flow, and testing.
 
+### Template-Driven
 
+Angular infers with the form object from the DOM.
+
+The form element contains no action, because it's handled by javascript code.\
+ngSubmit Directive give us an Event when submit is triggered.\
+You can use a local reference #f and pass it into onSubmit.\
+Set local refernce to ngForm to convert it into a ngForm type.\
+
+>\<Form (ngSubmit)="OnSubmit(f)" #f="ngForm">\</Form>
+
+#### Validation
+
+see <https://angular.io/api/forms/Validators>
+
+### Reactive
+
+Form is automatically generated from Typescript code and DOM and Typescript elements get automatically synchronized.
 
 ## 16 Course Project - Forms
 
