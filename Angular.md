@@ -3,6 +3,7 @@
 This document contains my notes to an angular course on udemy.
 <https://www.udemy.com/course/the-complete-guide-to-angular-2/>
 
+
 ## 0 How Synectics use it
 
     - Angular 8 as main framework
@@ -58,25 +59,55 @@ Release pipline to release into runtime environment:
 ### 0. Questions to Ben
 
 - What tools do we use
-    -Webstorm
-    -Angular
-    -SASS
-    -Typescript
-    -Webpack
-    -Redux
-    -...
+  - Webstorm
+  - Angular
+  - SASS
+  - Typescript
+  - Webpack
+  - Redux
+  - ...
 - How you can debug it with break points.
 - Small course on CSS SCSS files
 - Different npm scripts
 - difference between dev and production
-    - TS
-    - HTML
-    - CSS
+  - TS
+  - HTML
+  - CSS
 - How is it hosted
 - Do we use minifications?
 - How is Website mapped to projects
 
+### Cloud Environment
+
+- hosted on Node.js version 10
+- Node.js run in an alpine linux image
+- Linux image is running i a docker container
+- Azure Kubernetes service
+
 ## 1 Getting started
+
+### What handles Angular for you
+
+- Single Page Application
+- App Architektur
+- Modules
+- Services
+- Component
+- Component Interaction
+  - @input, @output, @eventemitter, @viewchild
+- Directives
+- Databinding
+- Dependency Injection
+- Routing
+- Security
+- Forms
+- Animation
+- Redux
+- Pipes
+- Observables
+- Rxjs
+- Service Worker
+
 
 ### Setup Development Environment
 
@@ -527,6 +558,11 @@ Reactive forms are more robust: they're more scalable, reusable, and testable. I
 Template-driven forms are useful for adding a simple form to an app, such as an email list signup form. They're easy to add to an app, but they don't scale as well as reactive forms. If you have very basic form requirements and logic that can be managed solely in the template, use template-driven forms.
 This guide provides information to help you decide which type of form works best for your situation. It introduces the common building blocks used by both approaches. It also summarizes the key differences between the two approaches, and demonstrates those differences in the context of setup, data flow, and testing.
 
+- Synchronize Data between HTML and Javascript
+- Validation
+- Work with form styles
+- ErrorCodes
+
 ### Template-Driven
 
 Angular infers with the form object from the DOM.
@@ -540,11 +576,26 @@ Set local refernce to ngForm to convert it into a ngForm type.\
 
 #### Validation
 
+Build in validators:
+
+- min(min: number)
+- max(max: number)
+- required(control: AbstractControl)
+- requiredTrue(control: AbstractControl)
+- email(control: AbstractControl)
+- minLength(minLength: number)
+- maxLength(maxLength: number)
+- pattern(pattern: string | RegExp)
+- nullValidator(control: AbstractControl)
+- compose(validators: ValidatorFn[])
+- composeAsync(validators: AsyncValidatorFn[])
+
 see <https://angular.io/api/forms/Validators>
 
 ### Reactive
 
 Form is automatically generated from Typescript code and DOM and Typescript elements get automatically synchronized.
+
 
 ## 16 Course Project - Forms
 
