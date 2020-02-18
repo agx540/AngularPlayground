@@ -596,6 +596,22 @@ see <https://angular.io/api/forms/Validators>
 
 Form is automatically generated from Typescript code and DOM and Typescript elements get automatically synchronized.
 
+#### Getting Access to controls
+
+![alt](./angular.md.pictures/2020-02-18-09-38-58.png)
+
+#### Synch Validation
+
+![alt](./angular.md.pictures/2020-02-18-09-29-03.png)
+
+![alt](./angular.md.pictures/2020-02-18-09-27-20.png)
+
+#### Async Validation 
+
+![alt](./angular.md.pictures/2020-02-18-09-29-03.png)
+
+![alt](./angular.md.pictures/2020-02-18-09-26-54.png)
+
 
 ## 16 Course Project - Forms
 
