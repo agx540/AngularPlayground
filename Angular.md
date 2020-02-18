@@ -606,12 +606,11 @@ Form is automatically generated from Typescript code and DOM and Typescript elem
 
 ![alt](./angular.md.pictures/2020-02-18-09-27-20.png)
 
-#### Async Validation 
+#### Async Validation
 
 ![alt](./angular.md.pictures/2020-02-18-09-29-03.png)
 
 ![alt](./angular.md.pictures/2020-02-18-09-26-54.png)
-
 
 ## 16 Course Project - Forms
 
