@@ -3,7 +3,6 @@
 This document contains my notes to an angular course on udemy.
 <https://www.udemy.com/course/the-complete-guide-to-angular-2/>
 
-
 ## 0 How Synectics use it
 
     - Angular 8 as main framework
@@ -58,7 +57,7 @@ Release pipline to release into runtime environment:
 
 ### 0. Questions to Ben
 
-- What tools do we use
+- What tools do we use?
   - Webstorm
   - Angular
   - SASS
@@ -66,16 +65,131 @@ Release pipline to release into runtime environment:
   - Webpack
   - Redux
   - ...
-- How you can debug it with break points.
-- Small course on CSS SCSS files
+- Some Customer run on Kubernetes some are running on Azure Services.
+- The code is spreaded around to repositories
+  - Technology Extension
+    -CloudServicesAngular
+    -CloudSystemManagement
+    -CloudEvidenceLocker
+  - Synx Component Library
+    -Synx.Component Library for synx theme based on Material Design
+    -it's stored in npm
+
+- How you can debug it with break points?
+  - Navigate to code in Chrome and create a breakpoint
 - Different npm scripts
-- difference between dev and production
+  - npm start\
+  it's used to start running dev web server
+  - npm build
+  - npm aot build
+- What are the differences between dev and production?
   - TS
   - HTML
   - CSS
-- How is it hosted
+- How is it hosted?
+  - node version 10 on an linux alpine image running on azure kubernetes service
+  - see DockerFile
 - Do we use minifications?
-- How is Website mapped to projects
+  - it's automatically done by npm build
+
+- How it is routed?
+  1. call a url -> get's routed to an ingress controller inside of kubernetes
+  2. ingress get rid of tls
+  3. route to namespace and container
+
+- synx.component Libary is created to create synx html components on google material design.
+
+- Angular livecycle hooks: <https://angular.io/guide/lifecycle-hooks#onchanges>
+
+- We are using <https://swimlane.github.io/ngx-charts/#/ngx-charts/bar-vertical> for creating dashboards
+
+- Use <www.CodePen.io> for fast testing of html, css and script coding.
+
+- In CloudSystemManagement we use SVG-icon-sprite-module to display svg icons
+![AltText](angular.md.pictures/2020-02-19-15-18-43.png)
+  - To add a new SVG file -> copy it to styles\SVG
+  - execute npm generate:symbols-defs
+
+- How are Websites mapped to projects?
+  - CloudServicesAngular
+    - Landing Page
+  - CloudEvidenceLockerAngular
+  - CloudSystemManagement
+- Can I have a small course on CSS and SCSS files?
+  - How it is structured?
+    -We have base scss Files in styles Folder in base folder level
+    -these base files are based on bootstrap and some other third party stlyes
+    -these base files are included into component scss files
+  - How it is used?
+  - Basic styling introduction?
+    -d-flex is a basic bootstrap utility function
+- How we use Material design?
+  - Material Design Video
+  - look for ::ng-deep and ViewEncapsulation
+  - font awesome
+- How do we use modules?
+
+- How we handle routing?
+  - It's handled like in the course.
+- How you handle Polyfills?
+  - 
+- What 3rd party libraries we use?
+  - ngx-charts
+  - angular-oauth2-oidc
+  - jwt-decode
+  - lodash\
+  cool typescript utility library
+  - moment\
+   very usefull for dates
+  - moment-timezone
+  - ngx-device-detector\
+   Detect the device we are running on.
+  - ngx-file-drop
+   To drop a clip into an incident
+  - ngx-toastr
+  - redux
+  - redux-observable
+  - simplebar\
+   used as a scrollbar in dashboard.
+  - tippy.js\
+   tooltip library
+  - videogular2
+  - ng-svg-icon-sprite\
+   It's used to display David Neils SVG Icons
+
+### 0. Interesting notes on Ben's course
+
+Very important file for angular cli
+angular.json
+
+Use ctrl+p to search for files in chrome
+
+Our Angular app should run on each browser and device.
+
+Use BrowserStack to test you app on different browsers and devices.
+
+caniuse.com to see if html or css is compatible with your browser.
+
+Session Storage is used to share state between different angular applications.
+
+How to style our angular apss:
+use flex to layout your html:
+<https://yoksel.github.io/flex-cheatsheet/#display>
+<https://yoksel.github.io/flex-cheatsheet/>
+
+- CSS
+- SASS
+- Flex
+- Bootstrap
+
+Redux is used CloudSystemManagement and CLoudEvidenceLocker.
+Redux default libary is used not ngrx.
+
+Epic is like effect in ngrx.
+
+? operator (Elvis Operator) only extecutes code left of this operator if left side is not null.
+
+Oberservables have a dollar sign at the end of the property name.
 
 ### Cloud Environment
 
@@ -107,7 +221,6 @@ Release pipline to release into runtime environment:
 - Observables
 - Rxjs
 - Service Worker
-
 
 ### Setup Development Environment
 
