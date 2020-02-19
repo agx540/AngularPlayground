@@ -127,12 +127,10 @@ Release pipline to release into runtime environment:
   - Material Design Video
   - look for ::ng-deep and ViewEncapsulation
   - font awesome
-- How do we use modules?
-
 - How we handle routing?
   - It's handled like in the course.
 - How you handle Polyfills?
-  - 
+  - It's only a typescript file which get executed when app is started. 
 - What 3rd party libraries we use?
   - ngx-charts
   - angular-oauth2-oidc
