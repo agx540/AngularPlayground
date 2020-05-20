@@ -130,7 +130,7 @@ Release pipline to release into runtime environment:
 - How we handle routing?
   - It's handled like in the course.
 - How you handle Polyfills?
-  - It's only a typescript file which get executed when app is started. 
+  - It's only a typescript file which get executed when app is started.
 - What 3rd party libraries we use?
   - ngx-charts
   - angular-oauth2-oidc
@@ -154,6 +154,8 @@ Release pipline to release into runtime environment:
   - videogular2
   - ng-svg-icon-sprite\
    It's used to display David Neils SVG Icons
+- How I can easily extend our synx-map component and test it in CEL without building, publishing to NPM and downloading again?
+  -???
 
 ### 0. Interesting notes on Ben's course
 
